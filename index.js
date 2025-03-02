@@ -9,6 +9,8 @@ import path from "path";
 
 const PASSWORD = "rezaali83@";
 
+console.log("This is for testing!!!");
+
 console.log(chalk.blue("\nWelcome to My Custom CLI!\n"));
 console.log(
   chalk.red(
