@@ -10,9 +10,9 @@
     "alisamadi-cli": "./index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ali Samadi",
   "license": "ISC",
-  "description": "",
+  "description": "A CLI tool for creating and managing projects",
   "dependencies": {
     "chalk": "^5.4.1",
     "inquirer": "^12.4.2"
