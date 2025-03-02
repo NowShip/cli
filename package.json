@@ -1,13 +1,16 @@
 {
   "name": "alisamadi-cli",
   "version": "1.0.25",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "dev": "tsc --watch"
   },
   "bin": {
-    "alisamadi-cli": "./index.js"
+    "alisamadi-cli": "./dist/index.js"
   },
   "keywords": [],
   "author": "Ali Samadi",
@@ -15,6 +18,12 @@
   "description": "A CLI tool for creating and managing projects",
   "dependencies": {
     "chalk": "^5.4.1",
-    "inquirer": "^12.4.2"
+    "inquirer": "^12.4.2",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^22.13.8",
+    "typescript": "^5.8.2"
   }
 }
