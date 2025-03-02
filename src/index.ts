@@ -5,11 +5,11 @@ import { existsSync } from "fs";
 import path from "path";
 import { input } from "@inquirer/prompts";
 import { confirm } from "@inquirer/prompts";
+import ora from "ora";
 
 import { displayProjectConfig } from "./utils/display-config.js";
 import { generateBetterAuthFiles } from "./utils/generate-files/better-auth.js";
 import { AllAnswers } from "./types/index.js";
-import ora from "ora";
 
 console.log(chalk.blue("\nWelcome to My Custom CLI!\n"));
 
