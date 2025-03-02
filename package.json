@@ -10,7 +10,7 @@
     "dev": "tsc --watch"
   },
   "bin": {
-    "alisamadi-cli": "./dist/index.js"
+    "alisamadi-cli": "dist/index.js"
   },
   "keywords": [],
   "author": "Ali Samadi",
