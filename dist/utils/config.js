@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { execSync } from "child_process";
 export const processFiles = (basePath, template) => {
     if (template.type === "file" && template.content) {
         // Create parent directories if they don't exist
@@ -24,17 +25,18 @@ export function processTemplate(folderName, templates) {
         processFiles(currentPath, config);
     });
     // Check if package.json exists and install dependencies
-    // const packageJsonPath = path.join(folderName, "package.json");
-    // if (fs.existsSync(packageJsonPath)) {
-    //   try {
-    //     console.log("\nInstalling dependencies...");
-    //     execSync("npm install", {
-    //       cwd: folderName,
-    //       stdio: "inherit",
-    //     });
-    //     console.log("Dependencies installed successfully!");
-    //   } catch (error) {
-    //     console.error("Failed to install dependencies:", error);
-    //   }
-    // }
+    const packageJsonPath = path.join(folderName, "package.json");
+    if (fs.existsSync(packageJsonPath)) {
+        try {
+            console.log("\nInstalling dependencies...");
+            execSync("npm install", {
+                cwd: folderName,
+                stdio: "inherit",
+            });
+            console.log("Dependencies installed successfully!");
+        }
+        catch (error) {
+            console.error("Failed to install dependencies:", error);
+        }
+    }
 }

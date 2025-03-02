@@ -108,6 +108,12 @@ getProjectConfig()
         spinner.stop();
         console.log("✨ npm-package setup completed successfully!");
     }
+    else if (isDB && !isBetterAuth && !isLemonsqueezy && !isResend) {
+        const spinner = ora("Generating DB files...\n").start();
+        yield generateFiles(answers.projectName, "db");
+        spinner.stop();
+        console.log("✨ DB setup completed successfully!");
+    }
     else if (isBetterAuth && isDB && !isLemonsqueezy && !isResend) {
         const spinner = ora("Generating BetterAuth files...\n").start();
         yield generateFiles(answers.projectName, "better-auth");

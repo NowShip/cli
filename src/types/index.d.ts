@@ -9,7 +9,7 @@ export interface AllAnswers {
   projectType: ProjectType;
 }
 
-export type TemplateType = "npm-package" | "better-auth";
+export type TemplateType = "npm-package" | "better-auth" | "db";
 
 export interface Template {
   type: "file" | "dir";
