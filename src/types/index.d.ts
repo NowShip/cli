@@ -1,16 +1,15 @@
-interface DBAnswers {
+export type ProjectType = "nextjs" | "npm-package" | "docs";
+
+export interface AllAnswers {
   projectName: string;
   DB: boolean;
-}
-
-interface ProjectAnswers {
+  "better-auth"?: boolean;
   lemonsqueezy: boolean;
   resend: boolean;
-  "better-auth"?: boolean; // Optional since it only exists when DB is true
+  projectType: ProjectType;
 }
 
-// Combined type for all answers
-export interface AllAnswers extends DBAnswers, ProjectAnswers {}
+export type TemplateType = "npm-package" | "better-auth";
 
 export interface Template {
   type: "file" | "dir";
@@ -19,5 +18,3 @@ export interface Template {
     [key: string]: Template;
   };
 }
-
-type TemplateType = keyof AllAnswers;

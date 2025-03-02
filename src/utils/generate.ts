@@ -35,23 +35,14 @@ function createTemplateObject(dirPath: string): any {
 
 // Replace the hardcoded template directory with folderName
 
-export const generateFiles = (folderName: string, type: TemplateType) => {
-  if (type === "better-auth") {
-    console.log("🚀 Initializing Better Auth setup...");
-  }
+export const generateFiles = async (folderName: string, type: TemplateType) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   try {
     const templateDir = path.join(sourceDir, `templates/${type}`);
 
     const output = createTemplateObject(templateDir);
     processTemplate(folderName, output);
-
-    if (type === "better-auth") {
-      console.log("\n✨ Better Auth setup completed successfully!");
-      console.log(
-        "🔑 Don't forget to set your BETTER_AUTH_SECRET in the .env file"
-      );
-    }
   } catch (error) {
     console.error("❌ Error generating files:", error);
     throw error;

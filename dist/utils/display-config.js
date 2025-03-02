@@ -1,6 +1,5 @@
 import chalk from "chalk";
 export function displayProjectConfig(answers) {
-    console.log(answers);
     console.log(chalk.bold.green("\n📋 Your Project Configuration"));
     console.log(chalk.dim("━━━━━━━━━━━━━━━━━━━━━━━━━━━"));
     console.log(chalk.cyan("💾 Database: ") +

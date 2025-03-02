@@ -2,7 +2,6 @@ import chalk from "chalk";
 import type { AllAnswers } from "../types/index.js";
 
 export function displayProjectConfig(answers: AllAnswers) {
-  console.log(answers);
   console.log(chalk.bold.green("\n📋 Your Project Configuration"));
   console.log(chalk.dim("━━━━━━━━━━━━━━━━━━━━━━━━━━━"));
   console.log(
