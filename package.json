@@ -1,6 +1,6 @@
 {
   "name": "alisamadi-cli",
-  "version": "1.0.2",
+  "version": "1.0.25",
   "main": "index.js",
   "type": "module",
   "scripts": {
