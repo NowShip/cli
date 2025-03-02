@@ -6,7 +6,7 @@ interface DBAnswers {
 interface ProjectAnswers {
   lemonsqueezy: boolean;
   resend: boolean;
-  betterauth?: boolean; // Optional since it only exists when DB is true
+  "better-auth"?: boolean; // Optional since it only exists when DB is true
 }
 
 // Combined type for all answers
@@ -19,3 +19,5 @@ export interface Template {
     [key: string]: Template;
   };
 }
+
+type TemplateType = keyof AllAnswers;

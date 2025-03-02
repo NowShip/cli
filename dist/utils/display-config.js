@@ -8,7 +8,7 @@ export function displayProjectConfig(answers) {
             ? chalk.green("✓ Drizzle ORM & Neon")
             : chalk.red("✗ No database")));
     console.log(chalk.cyan("🔐 Authentication: ") +
-        (answers.betterauth
+        (answers["better-auth"]
             ? chalk.green("✓ BetterAuth enabled")
             : chalk.red("✗ No authentication")));
     console.log(chalk.cyan("💳 Payments: ") +

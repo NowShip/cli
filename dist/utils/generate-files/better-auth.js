@@ -1,4 +1,4 @@
-import { processTemplate } from "../config.js";
+import { processTemplate } from "../utils/config.js";
 // Template file structure
 const templates = {
     config: {

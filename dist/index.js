@@ -15,7 +15,7 @@ import { input } from "@inquirer/prompts";
 import { confirm } from "@inquirer/prompts";
 import ora from "ora";
 import { displayProjectConfig } from "./utils/display-config.js";
-import { generateBetterAuthFiles } from "./utils/generate-files/better-auth.js";
+import { generateFiles } from "./utils/generate.js";
 console.log(chalk.blue("\nWelcome to My Custom CLI!\n"));
 function getProjectConfig() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -55,7 +55,7 @@ function getProjectConfig() {
         const answers = {
             projectName,
             DB: includeDB,
-            betterauth: includeBetterAuth,
+            "better-auth": includeBetterAuth,
             lemonsqueezy: includeLemonsqueezy,
             resend: includeResend,
         };
@@ -67,12 +67,12 @@ getProjectConfig()
     .then((answers) => __awaiter(void 0, void 0, void 0, function* () {
     displayProjectConfig(answers);
     const isDB = answers.DB;
-    const isBetterAuth = answers.betterauth;
+    const isBetterAuth = answers["better-auth"];
     const isLemonsqueezy = answers.lemonsqueezy;
     const isResend = answers.resend;
     if (isBetterAuth && isDB && !isLemonsqueezy && !isResend) {
         const spinner = ora("Generating BetterAuth files...\n\n").start();
-        generateBetterAuthFiles(answers.projectName);
+        generateFiles(answers.projectName, "better-auth");
         spinner.succeed("BetterAuth files generated successfully!");
     }
 }))
