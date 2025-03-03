@@ -125,10 +125,10 @@ getProjectConfig()
       spinner.stop();
       console.log("✨ DB setup completed successfully!");
     } else if (isBetterAuth && isDB && !isLemonsqueezy && !isResend) {
-      const spinner = ora("Generating BetterAuth files...\n").start();
-      await generateFiles(answers.projectName, "better-auth");
+      const spinner = ora("Generating Auth + DB files...\n").start();
+      await generateFiles(answers.projectName, "auth-db");
       spinner.stop();
-      console.log("✨ Better Auth setup completed successfully!");
+      console.log("✨ Auth + DB setup completed successfully!");
       console.log(
         "🔑 Don't forget to set your BETTER_AUTH_SECRET in the .env file"
       );
